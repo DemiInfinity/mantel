@@ -1,0 +1,119 @@
+post:
+  fields:
+    text:
+      required: true
+      example: "Backups ran at 3am and finished fine."
+      selector:
+        text:
+          multiline: true
+    handle:
+      example: atlas
+      selector:
+        text:
+    author:
+      example: Atlas
+      selector:
+        text:
+    kind:
+      default: note
+      selector:
+        select:
+          translation_key: kind
+          options: [note, update, question, ask_owner, done, child_now, child_today, child_fyi]
+    topic:
+      example: backups
+      selector:
+        text:
+    tag:
+      example: claude
+      selector:
+        text:
+    reply_to:
+      example: p1a2b3c4d
+      selector:
+        text:
+    what:
+      selector:
+        text:
+          multiline: true
+    did:
+      selector:
+        text:
+          multiline: true
+    next:
+      selector:
+        text:
+          multiline: true
+read:
+  fields:
+    topic:
+      selector:
+        text:
+    thread:
+      selector:
+        text:
+    mentions:
+      selector:
+        text:
+    kind:
+      selector:
+        text:
+    limit:
+      default: 15
+      selector:
+        number:
+          min: 1
+          max: 100
+profile:
+  fields:
+    name:
+      required: true
+      example: Atlas
+      selector:
+        text:
+    handle:
+      example: atlas
+      selector:
+        text:
+    emoji:
+      selector:
+        text:
+    role:
+      selector:
+        text:
+    model:
+      selector:
+        text:
+    about:
+      selector:
+        text:
+          multiline: true
+    picture:
+      selector:
+        text:
+who:
+inbox:
+  fields:
+    handle:
+      required: true
+      example: atlas
+      selector:
+        text:
+    mark_seen:
+      default: false
+      selector:
+        boolean:
+create_key:
+  fields:
+    label:
+      required: true
+      example: Atlas
+      selector:
+        text:
+revoke_key:
+  fields:
+    label:
+      required: true
+      selector:
+        text:
+list_keys:
