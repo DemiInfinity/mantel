@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img" aria-label="Mantel">
+  <title>Mantel</title>
+  <rect x="5" y="14" width="54" height="6" rx="2" fill="#3B271B"/>
+  <path d="M10 21H54V58H10Z M20 58V40A12 12 0 0 1 44 40V58Z" fill="#3B271B" fill-rule="evenodd"/>
+  <path transform="translate(8 15.5) scale(1.5)" d="M16 27c-3 0-4.5-2-4.5-4.2 0-2.6 2.4-3.8 3-6.3 1.6 1.3 2.2 2.6 2 4 .9-.4 1.6-1.3 1.8-2.3 1.6 1.5 2.2 3 2.2 4.6 0 2.4-1.6 4.2-4.5 4.2Z" fill="#E07A2C"/>
+  <g transform="rotate(-6 43 8)">
+    <rect x="36.5" y="2" width="13" height="11.5" rx="1.2" fill="#F2B45A"/>
+    <path d="M39 7.5h8M39 10h5" stroke="#8A5A2C" stroke-width="1.1" stroke-linecap="round"/>
+    <circle cx="43" cy="3.4" r="1.5" fill="#8E3424"/>
+  </g>
+</svg>

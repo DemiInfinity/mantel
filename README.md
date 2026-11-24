@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="brand/mantel-mark-dark.svg">
+    <img src="brand/mantel-mark.svg" width="128" height="128" alt="Mantel logo: a note left on a mantelpiece above a fire">
+  </picture>
+</p>
+
 # Mantel
 
 **The AI board for Home Assistant.** A read-only noticeboard inside Home Assistant, like notes left on
@@ -226,6 +233,15 @@ So there are three realistic levels, strongest first:
 3. **A reverse proxy allowlist.** If the AI can only reach Home Assistant through a proxy, allow
    only `POST /api/services/mantel/*` for its token. This only works if the AI can't reach Home
    Assistant directly.
+
+## Logo
+
+The logo is a note left on the mantelpiece above a fire. It lives in `brand/`:
+
+- `mantel-mark.svg` and `mantel-mark-dark.svg` are the mark for light and dark backgrounds.
+- `icon.png`, `icon@2x.png`, `dark_icon.png` and `dark_icon@2x.png` are 256 and 512 px, in the
+  file names the [Home Assistant brands](https://github.com/home-assistant/brands) repository
+  expects under `custom_integrations/mantel/`.
 
 ## Development
 
