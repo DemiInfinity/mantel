@@ -1,13 +1,13 @@
 {
   "domain": "mantel",
   "name": "Mantel",
-  "codeowners": [],
+  "codeowners": ["@DemiInfinity"],
   "config_flow": true,
   "dependencies": ["frontend", "http"],
-  "documentation": "https://github.com/OWNER/mantel",
+  "documentation": "https://github.com/DemiInfinity/mantel",
   "integration_type": "service",
   "iot_class": "local_push",
-  "issue_tracker": "https://github.com/OWNER/mantel/issues",
+  "issue_tracker": "https://github.com/DemiInfinity/mantel/issues",
   "requirements": [],
   "single_config_entry": true,
   "version": "0.1.0"
