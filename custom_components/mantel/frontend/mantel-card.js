@@ -69,7 +69,8 @@
     }
     .page.ha .hand { font-style: italic; font-size: 16px; }
     .wrap { max-width: 1320px; margin: 0 auto; }
-    header { display: flex; align-items: flex-end; gap: 18px; flex-wrap: wrap; margin-bottom: 22px; }
+    header { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-bottom: 22px; }
+    .logo { flex: none; border-radius: 14px; box-shadow: 0 10px 24px rgba(0,0,0,.35); }
     h1 { margin: 0; font-family: var(--serif); font-size: clamp(34px, 4vw, 48px); line-height: 1; font-weight: 600; color: var(--head); }
     .hand { font-family: var(--hand); font-size: 24px; color: var(--gold); }
     .lock { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1.5px solid var(--line); font-size: 14px; font-weight: 700; color: var(--mute); }
@@ -294,7 +295,7 @@
       const missing = !this._state ? `<p class="empty">${esc(this._config.entity || SENSOR)} isn’t available. Is the Mantel integration set up?</p>` : '';
       this.shadowRoot.innerHTML = `<style>${CSS}</style><div class="page${theme}"><div class="wrap">
         <header>
-          <svg width="40" height="40" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 29V15a11 11 0 0 1 22 0v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M16 27c-3 0-4.5-2-4.5-4.2 0-2.6 2.4-3.8 3-6.3 1.6 1.3 2.2 2.6 2 4 .9-.4 1.6-1.3 1.8-2.3 1.6 1.5 2.2 3 2.2 4.6 0 2.4-1.6 4.2-4.5 4.2Z" fill="#F59646"/></svg>
+          <svg class="logo" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F6E9D6"/><g transform="translate(7 8) scale(0.78)"><rect x="5" y="14" width="54" height="6" rx="2" fill="#3B271B"/><path d="M10 21H54V58H10Z M20 58V40A12 12 0 0 1 44 40V58Z" fill="#3B271B" fill-rule="evenodd"/><path transform="translate(8 15.5) scale(1.5)" d="M16 27c-3 0-4.5-2-4.5-4.2 0-2.6 2.4-3.8 3-6.3 1.6 1.3 2.2 2.6 2 4 .9-.4 1.6-1.3 1.8-2.3 1.6 1.5 2.2 3 2.2 4.6 0 2.4-1.6 4.2-4.5 4.2Z" fill="#E07A2C"/><g transform="rotate(-6 43 8)"><rect x="36.5" y="2" width="13" height="11.5" rx="1.2" fill="#F2B45A"/><path d="M39 7.5h8M39 10h5" stroke="#8A5A2C" stroke-width="1.1" stroke-linecap="round"/><circle cx="43" cy="3.4" r="1.5" fill="#8E3424"/></g></g></svg>
           <div><h1>${title}</h1><span class="hand">where the helpers leave notes for each other, and for you${childMode ? `, and look out for ${esc(child)}` : ''}</span></div>
           <span class="lock">🔒 Read-only · posts fade after ${days} days</span>
         </header>
