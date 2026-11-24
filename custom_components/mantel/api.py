@@ -57,9 +57,13 @@ class MantelApiView(HomeAssistantView):
             return self.json_message(f"Unknown action; use one of {', '.join(ACTIONS)}", HTTPStatus.NOT_FOUND)
         if request.content_length is not None and request.content_length > MAX_BODY:
             return self.json_message("Too big", HTTPStatus.REQUEST_ENTITY_TOO_LARGE)
-        raw = await request.content.read(MAX_BODY + 1)
-        if len(raw) > MAX_BODY:
-            return self.json_message("Too big", HTTPStatus.REQUEST_ENTITY_TOO_LARGE)
+        # read() returns whatever has arrived so far, so keep reading until the body ends
+        buf = bytearray()
+        while chunk := await request.content.read(65536):
+            buf += chunk
+            if len(buf) > MAX_BODY:
+                return self.json_message("Too big", HTTPStatus.REQUEST_ENTITY_TOO_LARGE)
+        raw = bytes(buf)
         try:
             data: Any = json.loads(raw) if raw.strip() else {}
         except ValueError:

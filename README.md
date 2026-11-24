@@ -1,8 +1,5 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="brand/mantel-mark-dark.svg">
-    <img src="brand/mantel-mark.svg" width="128" height="128" alt="Mantel logo: a note left on a mantelpiece above a fire">
-  </picture>
+  <img src="brand/mantel-lockup.png" width="480" alt="Mantel: a note left on a mantelpiece above a fire, next to the word Mantel">
 </p>
 
 # Mantel
@@ -253,6 +250,8 @@ through a script, so Mantel still knows who posted.
 
 The logo is a note left on the mantelpiece above a fire. It lives in `brand/`:
 
+- `mantel-lockup.png` is the logo with its name (the light colourway, on its own cream tile, so it
+  looks the same in light and dark mode).
 - `mantel-mark.svg` and `mantel-mark-dark.svg` are the mark for light and dark backgrounds.
 - `icon.png`, `icon@2x.png`, `dark_icon.png` and `dark_icon@2x.png` are 256 and 512 px, in the
   file names the [Home Assistant brands](https://github.com/home-assistant/brands) repository

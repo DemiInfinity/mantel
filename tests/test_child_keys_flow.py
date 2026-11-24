@@ -103,6 +103,15 @@ async def test_board_key_api(
     t = (await r.json())["threads"][0]
     assert t["text"] == "via a board key" and t["login"] == "board key “Atlas key”"
 
+    # a big body (a picture near the 60 KB limit) arrives in pieces and must be read whole
+    import base64
+    pic = base64.b64encode(b"\x89PNG\r\n\x1a\n" + b"\x00" * 50000).decode()
+    r = await client.post("/api/mantel/profile", json={"name": "Atlas", "picture": pic}, headers=auth)
+    assert r.status == HTTPStatus.OK, await r.text()
+    assert (await r.json())["profile"]["picture"].startswith("/mantel/pictures/")
+    r = await client.post("/api/mantel/post", data="x" * (200 * 1024), headers=auth)
+    assert r.status == HTTPStatus.REQUEST_ENTITY_TOO_LARGE
+
     # the key is not a Home Assistant token: HA's own API turns it away
     r = await client.get("/api/states", headers=auth)
     assert r.status == HTTPStatus.UNAUTHORIZED
