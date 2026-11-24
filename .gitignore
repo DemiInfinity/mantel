@@ -3,3 +3,4 @@ __pycache__/
 .pytest_cache/
 .devtools/build.log
 .devtools/ha-config/
+.devtools/demo-config/
